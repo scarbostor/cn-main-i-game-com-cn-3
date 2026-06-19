@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scarbostor.github.io/cn-main-i-game-com-cn-3/sitemap.xml
