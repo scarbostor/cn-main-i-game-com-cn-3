@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA直播 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f7f5f2;
+            color: #1d2a3a;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图 —— 杂志封面感 */
+        .hero {
+            background: linear-gradient(145deg, #0f1b2d 0%, #1c2e44 100%);
+            padding: 3rem 1.5rem 2.8rem;
+            text-align: center;
+            color: #eaeef3;
+            position: relative;
+            border-bottom: 4px solid #c9a87c;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: rgba(201, 168, 124, 0.25);
+            border-radius: 2px;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            word-break: keep-all;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+            letter-spacing: 2px;
+            max-width: 580px;
+            margin: 0.6rem auto 0;
+            border-top: 1px solid rgba(201, 168, 124, 0.35);
+            padding-top: 0.9rem;
+        }
+
+        .hero-sub span {
+            display: inline-block;
+            margin: 0 0.3rem;
+            color: #d9c097;
+        }
+
+        /* 正文区：卡片式浅色版面 */
+        .content {
+            max-width: 820px;
+            margin: 2.5rem auto 2rem;
+            padding: 0 1.8rem;
+            flex: 1;
+        }
+
+        .intro-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 4px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .intro-block:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .intro-block h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e5ddd2;
+            color: #1f3247;
+            letter-spacing: 1px;
+        }
+
+        .intro-block p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2a384a;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #9a6f3f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #b8864b;
+            border-bottom-color: #b8864b;
+        }
+
+        /* 引用 / 提示块 */
+        .tip-box {
+            background: #eaeae6;
+            border-left: 5px solid #c9a87c;
+            padding: 1.6rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0 1.8rem;
+            color: #1f2a37;
+        }
+
+        .tip-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box .small-note {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        /* 页尾 */
+        .footer {
+            background: #1d2a3a;
+            color: #b8c4d1;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            border-top: 2px solid #c9a87c;
+            margin-top: 1.8rem;
+        }
+
+        .footer a {
+            color: #d9c097;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(217, 192, 151, 0.4);
+        }
+
+        .footer a:hover {
+            color: #f0e1c0;
+            border-bottom-style: solid;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 2.2rem 1.2rem 2rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+            .hero-sub {
+                font-size: 0.9rem;
+            }
+            .content {
+                padding: 0 1rem;
+                margin-top: 1.8rem;
+            }
+            .intro-block {
+                padding: 1.6rem 1.2rem;
+                border-radius: 14px;
+            }
+            .intro-block h2 {
+                font-size: 1.3rem;
+            }
+            .tip-box {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .intro-block {
+                padding: 1.2rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图：杂志封面风格 -->
+    <header class="hero">
+        <h1 class="hero-title">🏀 季中再会 · 球场集合</h1>
+        <div class="hero-sub">
+            <span>再次收藏</span> <span>·</span> <span>持续关注</span> <span>·</span> <span>同一个节奏</span>
+        </div>
+    </header>
+
+    <!-- 正文区 三段自然介绍 + 嵌入链接 -->
+    <main class="content">
+
+        <section class="intro-block">
+            <h2>为什么总想回来看看</h2>
+            <p>赛程不会等人，但好比赛值得反复回味。或许你早已习惯在某个深夜或清晨，打开熟悉的页面，看一眼最新的比分和精彩集锦。<a href="https://qq-playball.com" class="accent-link">NBA直播</a>就像一位可靠的老朋友——不需要太多言语，点开就能立刻进入那个充满变数的球场世界。从东岸到西岸，从季前到季后赛，有些场景看多少次都不会腻。</p>
+            <p>我们相信，真正的热爱从来不需要被反复提醒。你只需要知道，当你想看的时候，那个角落依然亮着，画面流畅，解说依然带着恰到好处的温度。</p>
+        </section>
+
+        <section class="intro-block">
+            <h2>收藏的，不止是一个网址</h2>
+            <p>很多人把喜欢的直播页面存在浏览器书签里，或分享到群里。这不只是一个链接，而是一种随时可以抽离日常、沉浸于竞技片刻的默契。无论是勒布朗的追身封盖，还是新秀的首次绝杀，那些决定性瞬间总是不期而至。</p>
+            <p>也正因如此，我们持续调整观赛体验，减少不必要的干扰，让画面本身成为主角。你只需把目光交给屏幕，剩下的由我们守护。如果你还没收藏，不妨现在将<a href="https://qq-playball.com" class="accent-link">NBA直播</a>放入书签——下次想找的时候，一秒即达。</p>
+        </section>
+
+        <!-- 插入一个带有柔和背景的提示块 -->
+        <div class="tip-box">
+            <p><strong>📌 一个小提醒</strong> 高潮常常出现在第三节后半段，或是第四节最后三分钟。如果你时间有限，不妨从那里开始看，一样能感受到窒息般的紧张感。</p>
+            <p class="small-note">当然，完整比赛自有它的叙事节奏，慢慢看也有慢慢看的味道。</p>
+        </div>
+
+        <section class="intro-block">
+            <h2>持续关注，细水长流</h2>
+            <p>赛季很长，长到足以见证一支球队从磨合到默契，从低谷到反弹。每天都追踪所有比赛并不现实，但只要你有空回来，总会有新鲜的故事在等着你。从背靠背的疲惫到全明星的狂欢，从交易截止日的躁动到季后赛的硬碰硬——<a href="https://qq-playball.com" class="accent-link">NBA直播</a>愿意一直站在旁观者的位置，为你呈现最真实的赛场原貌。</p>
+            <p>不必担心错过太多，因为真正关键的战役，往往会在你的记忆中留下线索。而我们只是那个帮你按回放键的人。</p>
+        </section>
+
+        <!-- 再一个淡色提醒，用于再次访问的氛围 -->
+        <div style="text-align: right; margin: 1rem 0 0.2rem; font-size: 0.9rem; color: #5a6a7e; border-top: 1px solid #ddd6cb; padding-top: 1.5rem;">
+            <span>✦ 欢迎下次再来，或者……就现在？</span>
+        </div>
+
+    </main>
+
+    <!-- 页尾 访问提示 -->
+    <footer class="footer">
+        <p>随时回来 · 每次都有新回合</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
+            <a href="https://qq-playball.com">NBA直播</a> — 无干扰观赛，持续陪伴
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">&copy; 球场手记 · 季中杂志</p>
+    </footer>
+
+</body>
+</html>
